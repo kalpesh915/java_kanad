@@ -21,8 +21,8 @@ public class Pro1 {
 
         //System.out.println(dataMap);
 
-        //System.out.println(dataList.get(0));
-        //System.out.println(dataMap.get(1));
+        System.out.println(dataList.get(0));
+        System.out.println(dataMap.get(0));
 
         /*for(int x : dataList){
             System.out.print(" "+x);
