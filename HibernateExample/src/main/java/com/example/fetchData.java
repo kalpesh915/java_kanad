@@ -2,10 +2,9 @@ package com.example;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-public class InsertData {
+public class fetchData {
     public static void main(String[] args) {
         try{
             SessionFactory factory = new Configuration()
@@ -14,11 +13,16 @@ public class InsertData {
                     .buildSessionFactory();
 
             Session session = factory.openSession();
-            Transaction transaction = session.beginTransaction();
-            session.persist(new Student(4, "Kanad", "Joshi", "Rajkot", "9900990099", "kanad@gmil.com"));
-            transaction.commit();
+
+            //Student s1 = session.get(Student.class, 1);
+            //Student s1 = session.find(Student.class, 1);
+            //Student s1 = session. byId(Student.class).load(1);
+            Student s1 = session.byId(Student.class).getReference(1);
+            //System.out.println(s1);
+
             session.close();
             factory.close();
+
         }catch (Exception err){
             System.out.println("Error is "+err);
         }

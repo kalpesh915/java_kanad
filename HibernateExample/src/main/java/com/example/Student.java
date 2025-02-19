@@ -1,12 +1,17 @@
 package com.example;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+//@Entity(name="Student")
+//@Table(name="myStudents")
 @Entity
 public class Student {
     @Id
     private int roll;
+    //@Column(name="firstName")
     private String fname;
     private String lname;
     private String city;

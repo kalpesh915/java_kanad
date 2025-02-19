@@ -7,6 +7,5 @@
     <!--<property name="hibernate.hbm2ddl.auto">create</property>-->
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.show_sql">true</property>
-    <!--<mapping class="com.example.Student"></mapping>-->
     </session-factory>
 </hibernate-configuration>

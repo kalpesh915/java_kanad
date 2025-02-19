@@ -5,7 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-public class InsertData {
+public class DeleteData {
     public static void main(String[] args) {
         try{
             SessionFactory factory = new Configuration()
@@ -15,7 +15,11 @@ public class InsertData {
 
             Session session = factory.openSession();
             Transaction transaction = session.beginTransaction();
-            session.persist(new Student(4, "Kanad", "Joshi", "Rajkot", "9900990099", "kanad@gmil.com"));
+
+            Student s1 = session.find(Student.class, 2);
+            System.out.println(s1);
+            session.remove(s1);
+
             transaction.commit();
             session.close();
             factory.close();
